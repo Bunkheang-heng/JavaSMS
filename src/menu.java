@@ -37,7 +37,7 @@ public class menu {
         contentPanel.add(imageLabel);
         contentPanel.add(Box.createRigidArea(new Dimension(0, 25)));
 
-        String[] buttonLabels = {"Manage Students", "Manage Teachers", "View Student List", "View Teacher List", "Log Out"};
+        String[] buttonLabels = {"Manage Students", "Manage Teachers", "Manage Course", "View Student List", "View Teacher List", "Assign Courses", "Log Out"};
         for (String label : buttonLabels) {
             JButton button = createStyledButton(label);
             contentPanel.add(Box.createRigidArea(new Dimension(0, 25)));
@@ -107,14 +107,20 @@ public class menu {
                 case "Manage Students":
                     SwingUtilities.invokeLater(() -> new cudstudent().setVisible(true));
                     break;
-                case "Manage Teachers":  // Fixed: Changed from "Manage Teacher" to "Manage Teachers"
+                case "Manage Teachers":
                     SwingUtilities.invokeLater(() -> new cudteacher().setVisible(true));
+                    break;
+                case "Manage Course":
+                    SwingUtilities.invokeLater(() -> new cudcourse().setVisible(true));
                     break;
                 case "View Student List":
                     SwingUtilities.invokeLater(() -> new StudentInformationPage().setVisible(true));
                     break;
                 case "View Teacher List":
                     SwingUtilities.invokeLater(() -> new TeacherInformationPage().setVisible(true));
+                    break;
+                case "Assign Courses":
+                    SwingUtilities.invokeLater(() -> new StudentCourseAssignment().setVisible(true));
                     break;
                 case "Log Out":
                     // Implement logout functionality here
